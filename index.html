@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heracles Labours</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <header>
+      <h1 id="Vs">Heracles VS The Mares of Diomedes</h1>
+    </header>
+    <main>
+      <div id="error"></div>
+      <div id="fighters"></div>
+      <!-- The arena is created dynamically from the ArenaTemplate in utils-->
+      <!-- You should previously instancied all the element in the readme-->
+      <section id="arena"></section>
+      <section class="win" id="win">
+      </section>
+    </main>
+    <!-- Open the modal with the HeroInfoTemplate class in utils.js-->
+    <div class="button">
+      <button onclick="openModal('hero')">Hero Details</button>
+      <button onclick="openModal('ennemy')">Ennemy Details</button>
+    </div>
+    <aside id="info" >
+    </aside>
+    <!-- Loading of all POO Class files here -->
+    <script src="./src/Fighters/Fighter.js"></script>
+    <script src="./src/Fighters/Hero.js"></script>
+    <script src="./src/Fighters/Monster.js"></script>
+    <script src="./src/Fighters/Shield.js"></script>
+    <script src="./src/Fighters/Weapon.js"></script>
+    <script src="./src/Arena.js"></script>
+    <!-- Includes the new One Here -->
+    <!-- Loading of the index.js at last, with the utils.js file (creating all html template) -->
+    <script src="./public/utils.js"></script>
+    <script src="./public/index.js"></script>
+  </body>
+</html>
