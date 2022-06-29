@@ -4,7 +4,6 @@ class Arena {
     this.monsters = monsters;
     this.size = size;
     this.message = "";
-    this.tiles = []
   }
 
   /**
@@ -14,25 +13,13 @@ class Arena {
    * @returns Number
    */
   getDistance(fighter1, fighter2) {
-    const dist = Math.sqrt(Math.pow(fighter2.x - fighter1.x, 2) + Math.pow(fighter2.y - fighter1.y, 2)).toFixed(2);
-    return dist
+    return Math.sqrt(Math.pow(fighter2.x - fighter1.x, 2) + Math.pow(fighter2.y - fighter1.y, 2)).toFixed(2);
   }
-
-  /**
-   * Find the tile corresponding to the coordinates
-   * @param {*} x Number
-   * @param {*} y Number
-   * @returns Object Tile
-   */
-  getTile(x, y) {
-    return this.tiles.filter(tile => tile.x === x && tile.y === y)
-  }
-
 
   /**
    * Calcul from the distance of the fight is posssible
-   * @param {Object} attacker 
-   * @param {Obect} defender 
+   * @param {Object} attacker
+   * @param {Obect} defender
    * @returns Boolean
    */
   isTouchable(attacker, defender) {
@@ -52,14 +39,10 @@ class Arena {
     if (direction === "E") this.hero.x -= 1;
     if (direction === "W") this.hero.x += 1;
 
-    const tile = this.getTile(this.hero.x, this.hero.y);
-
     if (!this.checkOnMap(this.hero.x, this.hero.y)) {
       this.message = "Moving outside the map is not possible";
     } else if (!this.CheckNoMonster(this.hero.x, this.hero.y)) {
       this.message = "Position already used, you can t move here";
-    } else if (tile[0] && !tile[0].crossable) {
-      this.message = "Moving over is not possible";
     } else {
       return { x, y };
     }
@@ -71,8 +54,8 @@ class Arena {
 
   /**
    * Check if the coordinate are on the map
-   * @param {Number} x 
-   * @param {Number} y 
+   * @param {Number} x
+   * @param {Number} y
    * @returns Boolean
    */
   checkOnMap(x, y) {
@@ -81,8 +64,8 @@ class Arena {
 
   /**
    * Check of the presence of e monster on the coordinates
-   * @param {Number} x 
-   * @param {Number} y 
+   * @param {Number} x
+   * @param {Number} y
    * @returns Boolean
    */
   CheckNoMonster(x, y) {
