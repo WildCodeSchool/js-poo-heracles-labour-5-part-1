@@ -41,8 +41,8 @@ In the `Water` class, set `crossable` to *false*;
 Now you are going to slightly modify the behavior of the `move()` method of `Arena` so that Heracles cannot move on a tile that does not allow it.
 1. Start by creating a method `getTile(x, y)` allowing to retrieve a tile according to its coordinates (or an empty array if the box is empty).
 2. In `move()`, get the tile corresponding to the hero's potential destination.
-3. Check that the tile is crossable thanks to the new `crossable` property.
-4. If not, generate the error message "Not crossable" ; if yes, the displacement continues (note : an undefined tile AKA dirt tile *is* crossable).
+3. Check there is a tile, and that the tile is crossable thanks to the new `crossable` property.
+4. If not, generate the error message "Not crossable" ; if yes, the displacement continues.
 
 Tests on the map that the hero can cross grass but not water.
 
