@@ -24,6 +24,8 @@ const ArenaHTML = new ArenaTemplate('arena');
 ArenaHTML.setMoveEvent(arena);
 ArenaHTML.setMonsterClick(arena);
 
+arena.tiles = [];
+
 /** Uncomment the code here when your class Grass and Water are ready */
 // const grass = [
 //   new Grass(0, 0),
