@@ -28,9 +28,7 @@ Tu vas créer autant de nouvelles classes que de types de tuile. Créé pour com
 
 > Remarques, penses à ajouter tes fichiers en ressources dans le *index.html* (En bas, dans la bonne section)
 
-Il faut maintenant passer les tuiles à la carte. Dans la classe `Arena`, ajoute une propriété `tiles` de type *array*.
-
-Réinitialise la partie et décommente la première partie de code dans le *index.js*. Tu devrais voir apparaître de l'herbe et de l'eau, certaines cases restant vides.
+Il faut maintenant passer les tuiles à la carte. Décommente la première partie de code dans le *index.js*. Tu devrais voir apparaître de l'herbe et de l'eau, certaines cases restant vides.
 
 ## Méfie toi de l'eau qui dort
 
@@ -44,7 +42,7 @@ Maintenant, tu vas modifier légèrement le comportement de la méthode `move()`
 1. Commence par créer une méthode `getTile(x, y)` permettant de récupérer une tuile en fonction de ses coordonéés (ou un tableau vide si la case est vide).
 2. Dans `move()`, utilise cette méthode pour récupérer la tuile potentielle correspondant à la destination potentielle du héros.
 3. Vérifie si il y a une tuile et si oui, que la tuile est traversable grâce notamment à la nouvelle propriété `crossable`.
-4. Sinon lance une exception, si oui, le déplacement continue.
+4. Sinon, génère le message d'erreur "Not crossable" ; si oui, le déplacement continue.
 
 Teste sur la carte que le héros peut bien traverser l'herbe mais pas l'eau.
 
