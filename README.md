@@ -28,9 +28,7 @@ You will create as many new classes as there are tile types. To start, create a 
 
 > Notes, consider adding your files as resources in the *index.html*
 
-It is now necessary to pass the tiles to the map. In the `Arena` class, add a `tiles` property of type *array*. Also add an optional third `tiles` parameter, in the constructor.
-
-Reset the part and uncomment the code in the *index.js*. You should see grass and water appear, with some squares remaining empty.
+It is now necessary to pass the tiles to the map. Uncomment the code in the *index.js*. You should see grass and water appear, with some squares remaining empty.
 
 ## Distrusts you to still waters
 
@@ -43,8 +41,8 @@ In the `Water` class, set `crossable` to *false*;
 Now you are going to slightly modify the behavior of the `move()` method of `Arena` so that Heracles cannot move on a tile that does not allow it.
 1. Start by creating a method `getTile(x, y)` allowing to retrieve a tile according to its coordinates (or an empty array if the box is empty).
 2. In `move()`, get the tile corresponding to the hero's potential destination.
-3. Check that the tile is crossable thanks to the new `crossable` property.
-4. If not throws an exception, if yes, the displacement continues.
+3. Check there is a tile, and that the tile is crossable thanks to the new `crossable` property.
+4. If not, generate the error message "Not crossable" ; if yes, the displacement continues.
 
 Tests on the map that the hero can cross grass but not water.
 
