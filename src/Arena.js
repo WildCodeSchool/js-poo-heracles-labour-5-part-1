@@ -89,28 +89,28 @@ class Arena {
     let msg = 'This monster is not touchable, please move first';
     let death = false;
 
-    if (this.isTouchable(arena.hero, arena.monsters[index])) {
-      arena.hero.fight(arena.monsters[index]);
+    if (this.isTouchable(this.hero, this.monsters[index])) {
+      this.hero.fight(this.monsters[index]);
 
-      if (this.isTouchable(arena.monsters[index], arena.hero && arena.monsters[index].isAlive())) {
-        arena.monsters[index].fight(arena.hero);
+      if (this.isTouchable(this.monsters[index], this.hero && this.monsters[index].isAlive())) {
+        this.monsters[index].fight(this.hero);
       }
 
-      if (!arena.monsters[index].isAlive()) {
+      if (!this.monsters[index].isAlive()) {
         death = true;
-        msg = `${arena.hero.name} won 🗡️  ${arena.hero.life} 💙 ${arena.monsters[index].name} is dead !!!`;
-        arena.hero.updateExp(arena.monsters[index].experience)
-      } else if (!arena.hero.isAlive()) {
+        msg = `${this.hero.name} won 🗡️  ${this.hero.life} 💙 ${this.monsters[index].name} is dead !!!`;
+        this.hero.updateExp(this.monsters[index].experience)
+      } else if (!this.hero.isAlive()) {
         death = true;
-        msg = `${arena.monsters[index].name} won 🗡️, your're dead !!!`
+        msg = `${this.monsters[index].name} won 🗡️, your're dead !!!`
       } else {
-        msg = `${arena.hero.name} 💙 ${arena.hero.life} 🗡️  ${arena.monsters[index].name} 💙 ${arena.monsters[index].life}`
+        msg = `${this.hero.name} 💙 ${this.hero.life} 🗡️  ${this.monsters[index].name} 💙 ${this.monsters[index].life}`
       }
 
     }
 
     if (!this.checkBattle()) {
-      msg = `${arena.hero.name} won this battle. All monsters are dead. Congratulations`
+      msg = `${this.hero.name} won this battle. All monsters are dead. Congratulations`
     }
 
     document.getElementById("error").innerText = msg;
